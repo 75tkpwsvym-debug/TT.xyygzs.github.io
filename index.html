@@ -31,7 +31,7 @@
   --nav-h:64px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 58px)}
 body{
   background:var(--bg);color:var(--text);
   font-family:'Inter','Noto Sans SC',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
@@ -71,9 +71,19 @@ p.body{color:var(--text2);max-width:56ch}
 html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .95s cubic-bezier(.2,.6,.2,1),transform .95s cubic-bezier(.2,.6,.2,1)}
 html.js .rv.in{opacity:1;transform:none}
 
+/* ---------- 顶部公告 ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:101;height:42px;
+  background:#0B0B0E;border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:0 16px;font-size:13px;color:var(--gold-2);letter-spacing:.1em;
+  white-space:nowrap;
+}
+.topbar .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex:none}
+
 /* ---------- 导航 ---------- */
 .nav{
-  position:fixed;inset:0 0 auto 0;z-index:100;height:var(--nav-h);
+  position:fixed;inset:42px 0 auto 0;z-index:100;height:var(--nav-h);
   transition:background .35s,border-color .35s,backdrop-filter .35s;
   border-bottom:1px solid transparent;
 }
@@ -245,6 +255,7 @@ html.js .rv.in{opacity:1;transform:none}
 .footer a:hover{color:var(--text)}
 .footer-bottom{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--text3)}
 .footer-bottom .subtle{letter-spacing:.04em}
+.sale-note{margin-top:22px;text-align:center;font-size:12.5px;color:var(--text3);letter-spacing:.14em}
 
 /* ---------- 响应式 ---------- */
 @media (max-width:1024px){
@@ -259,7 +270,7 @@ html.js .rv.in{opacity:1;transform:none}
   .process-media{position:static}
   .wx-card{position:static}
   .nav-links{
-    position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(0,0,0,.94);
+    position:fixed;top:calc(var(--nav-h) + 42px);left:0;right:0;background:rgba(0,0,0,.94);
     backdrop-filter:blur(20px);flex-direction:column;gap:0;padding:10px 28px 20px;
     border-bottom:1px solid var(--line);display:none;margin-left:0;
   }
@@ -287,6 +298,9 @@ html.js .rv.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
+
+<!-- ===== 顶部公告 ===== -->
+<div class="topbar"><span class="dot"></span>先咨询，再下单 · 微信：yyt6678yy</div>
 
 <!-- ===== 导航 ===== -->
 <header class="nav" id="top">
@@ -638,6 +652,7 @@ html.js .rv.in{opacity:1;transform:none}
       <span>© 2026 拾声 · SOUND STORY　保留所有权利</span>
       <span class="subtle">为音乐人提供主流短视频平台认证协助 · 原创内容 · 保留署名权</span>
     </div>
+    <p class="sale-note">该商品售出，不支持退货</p>
   </div>
 </footer>
 
